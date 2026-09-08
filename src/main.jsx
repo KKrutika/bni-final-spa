@@ -11,6 +11,7 @@ import {
 } from 'react-router-dom';
 import {
   ArrowRight,
+  ArrowUp,
   ArrowUpRight,
   CalendarDays,
   ChevronLeft,
@@ -634,6 +635,30 @@ const members = [
     photo: 'https://bni-bhopal.in/web/open/appsCmsImageDownload?imageObjectId=5d3d1fc00cf21d2c8d14a448',
     website: 'https://oneonedesignstudio.com',
   },
+  {
+    id: 51,
+    name: 'Janak Bhatt',
+    role: 'Business Consulting > Consulting > Business Consulting',
+    company: 'Janak Bhatt',
+    category: 'Consulting',
+    chapter: 'Bhopal BNI Vision',
+    city: 'Bhopal',
+    initials: 'JB',
+    photo: '',
+    website: '',
+  },
+  {
+    id: 52,
+    name: 'Rohit Kaushal',
+    role: 'Retail > Fashion & Accessories > Fashion Accessories',
+    company: 'Rohit Kaushal',
+    category: 'Retail',
+    chapter: 'Bhopal BNI Vision',
+    city: 'Bhopal',
+    initials: 'RK',
+    photo: '',
+    website: '',
+  },
 ];
 
 // const chapters = [
@@ -765,60 +790,91 @@ const members = [
 //   },
 // ];
 
-const events = [
+const memberStories = [
   {
     id: 1,
-    title: 'BNI Power Breakfast',
-    date: '30 Aug 2026',
-    time: '7:00 AM',
-    city: 'Bhopal',
-    type: 'Networking',
-    desc: 'Build relationships and exchange qualified referrals over breakfast.',
+    name: 'Aayan Kidwai',
+    role: 'Retail Business Owner',
+    company: 'Sunrise Enterprises',
+    quote:
+      'BNI helped me build the right kind of relationships. The referrals we received were not just leads—they were high-quality opportunities that genuinely converted into business growth.',
+    initials: 'AK',
+    rating: 5,
+    photo: 'https://bni-bhopal.in/web/open/appsCmsImageDownload?imageObjectId=687f27e9e4b0a08baf4183de',
   },
   {
     id: 2,
-    title: 'Business Growth Workshop',
-    date: '06 Sep 2026',
-    time: '11:00 AM',
-    city: 'Indore',
-    type: 'Workshop',
-    desc: 'Practical strategies to turn trusted connections into predictable growth.',
+    name: 'Ankit Gupta',
+    role: 'Health & Wellness Consultant',
+    company: 'Brain Waves Tech',
+    quote:
+      'The structure, accountability and trust in this network changed how I do business. I now have a dependable circle of professionals who refer clients with confidence.',
+    initials: 'AG',
+    rating: 5,
+    photo: 'https://bni-bhopal.in/web/open/appsCmsImageDownload?imageObjectId=637dc4a5e4b0f21939521557',
   },
   {
     id: 3,
-    title: 'BNI Networking Meet',
-    date: '20 Sep 2026',
-    time: '7:30 AM',
-    city: 'Mumbai',
-    type: 'Networking',
-    desc: 'Meet business professionals across categories and expand your network.',
+    name: 'Alka Sharma',
+    role: 'Founder, Khadyot Naturals',
+    company: 'Khadyot Naturals Pvt Ltd',
+    quote:
+      'BNI gave me visibility and credibility in a community that values long-term relationships. It is one of the most effective networking systems I have experienced.',
+    initials: 'AS',
+    rating: 5,
+    photo: 'https://bni-bhopal.in/web/open/appsCmsImageDownload?imageObjectId=668d6f7b283c7a0001c33f3b',
   },
   {
     id: 4,
-    title: 'Leadership Seminar',
-    date: '04 Oct 2026',
-    time: '10:00 AM',
+    name: 'Abhishek Ray',
+    role: 'Elevator Solutions Expert',
+    company: 'Vertica Elevators',
+    quote:
+      'The weekly meetings sharpened my pitch, improved my confidence and connected me with people who actually needed what I offer. It has been transformational for my business.',
+    initials: 'AR',
+    rating: 5,
+    photo: 'https://bni-bhopal.in/web/open/appsCmsImageDownload?imageObjectId=66af6102e4b0470bacc09868',
+  },
+];
+
+const designatedMemberBadges = {
+  'Gurwin Singh Sahni': { type: 'president', label: 'President' },
+  'Utkarsh Rana': { type: 'vice-president', label: 'Vice President' },
+  'Anil Nema': { type: 'secretary-treasurer', label: 'Secretary / Treasurer' },
+  'Anurag Maheshwari': { type: 'visitor-host', label: 'Visitor Host' },
+  'Samip Mohan': { type: 'education-coordinator', label: 'Education Coordinator' },
+  'Amit Upadhyay': { type: 'events-coordinator', label: 'Events Coordinator' },
+  'Hoshang Bajaj': { type: 'membership-committee', label: 'Membership Committee' },
+  'Isha Joshi': { type: 'membership-committee', label: 'Membership Committee' },
+  'Lakshya Chawla': { type: 'membership-committee', label: 'Membership Committee' },
+  'Arushi Maheshwari': { type: 'membership-committee', label: 'Membership Committee' },
+  'Aayan Kidwai': { type: 'membership-committee', label: 'Membership Committee' },
+  'Smita Nahar': { type: 'membership-committee', label: 'Membership Committee' },
+  'Vishal Shrivastava': { type: 'membership-committee', label: 'Membership Committee' },
+  'Meena Kothari': { type: 'membership-committee', label: 'Membership Committee' },
+  'Viny Raj Modi': { type: 'mentor-coordinator', label: 'Mentor Coordinator' },
+  'Janak Bhatt': { type: 'chapter-director-consultant', label: 'Chapter Director Consultant' },
+  'Rohit Kaushal': { type: 'chapter-ambassador', label: 'Chapter Ambassador' },
+};
+
+const events = [
+  {
+    id: 1,
+    title: 'Oauth Day',
+    date: '09 Sep 2026',
+    time: '7:30 AM',
     city: 'Bhopal',
-    type: 'Leadership',
-    desc: 'Learn leadership practices from experienced BNI chapter leaders.',
+    type: 'Networking',
+    desc: 'A focused networking session for meaningful connections and introductions.',
   },
   {
-    id: 5,
-    title: 'Visitors Day',
-    date: '18 Oct 2026',
+    id: 2,
+    title: 'BNI Meetings',
+    date: '09 Sep 2026',
     time: '8:00 AM',
-    city: 'Pune',
-    type: 'Visitors Day',
-    desc: 'See how a BNI chapter works and meet local business owners.',
-  },
-  {
-    id: 6,
-    title: 'Referral Masterclass',
-    date: '01 Nov 2026',
-    time: '9:00 AM',
-    city: 'Delhi',
-    type: 'Workshop',
-    desc: 'Improve your referral conversations and create stronger introductions.',
+    city: 'Bhopal',
+    type: 'Meeting',
+    desc: 'Morning chapter meeting to connect, share referrals and build business momentum.',
   },
 ];
 
@@ -861,16 +917,23 @@ function formatMetricValue(value, original) {
   return `${Math.round(value)}+`;
 }
 
-function scrollToWhySection(event, navigate, currentPath) {
+function scrollToSection(event, navigate, currentPath, sectionId) {
   if (event) {
     event.preventDefault();
   }
 
   const scroll = () => {
-    const target = document.getElementById('why');
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    const target = document.getElementById(sectionId);
+    if (!target) return;
+
+    const headerOffset = 90;
+    const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
   };
 
   if (currentPath === '/') {
@@ -879,23 +942,34 @@ function scrollToWhySection(event, navigate, currentPath) {
   }
 
   navigate('/');
-  setTimeout(scroll, 80);
+  setTimeout(scroll, 100);
 }
 
-function Header() {
+function scrollToWhySection(event, navigate, currentPath) {
+  scrollToSection(event, navigate, currentPath, 'why');
+}
+
+function scrollToEventsSection(event, navigate, currentPath) {
+  scrollToSection(event, navigate, currentPath, 'events');
+}
+
+function scrollToStoriesSection(event, navigate, currentPath) {
+  scrollToSection(event, navigate, currentPath, 'stories');
+}
+
+function Header({ onJoinNow }) {
   const [open, setOpen] = useState(false);
   const [activeNav, setActiveNav] = useState('Home');
+  const [showHeaderJoinButton, setShowHeaderJoinButton] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
   const nav = [
     ['Home', '/'],
     ['Members', '/members'],
     // ['Chapters', '/chapters'],
-    ['Events', '/events'],
+    ['Events', 'scroll-events'],
     ['Why BNI', 'scroll'],
-    ['About', '/about'],
-    ['My BNI Stories', 'scroll'],
-    ['FAQ', '/faq'],
+    ['My BNI Stories', 'scroll-stories'],
   ];
 
   const handleHomeClick = (event) => {
@@ -918,7 +992,31 @@ function Header() {
       if (match) {
         setActiveNav(match[0]);
       }
+      setShowHeaderJoinButton(true);
+      return;
     }
+
+    const joinSection = document.getElementById('join-now');
+
+    if (!joinSection) {
+      setShowHeaderJoinButton(true);
+      return;
+    }
+
+    const checkJoinSection = () => {
+      const rect = joinSection.getBoundingClientRect();
+      const isVisible = rect.top <= window.innerHeight * 0.8 && rect.bottom >= window.innerHeight * 0.15;
+      setShowHeaderJoinButton(!isVisible);
+    };
+
+    checkJoinSection();
+    window.addEventListener('scroll', checkJoinSection, { passive: true });
+    window.addEventListener('resize', checkJoinSection);
+
+    return () => {
+      window.removeEventListener('scroll', checkJoinSection);
+      window.removeEventListener('resize', checkJoinSection);
+    };
   }, [location.pathname]);
 
   return (
@@ -932,16 +1030,23 @@ function Header() {
 
       <nav className={open ? 'open' : ''}>
         {nav.map(([n, p]) => {
-          if (p === 'scroll') {
+          if (p === 'scroll' || p === 'scroll-events' || p === 'scroll-stories') {
+            const targetLabel = p === 'scroll-events' ? 'Events' : p === 'scroll-stories' ? 'My BNI Stories' : 'Why BNI';
             return (
               <button
                 key={n}
                 type="button"
-                className={`nav-link ${activeNav === 'Why BNI' ? 'active' : ''}`}
+                className={`nav-link ${activeNav === targetLabel ? 'active' : ''}`}
                 onClick={(event) => {
                   setOpen(false);
-                  setActiveNav('Why BNI');
-                  scrollToWhySection(event, navigate, location.pathname);
+                  setActiveNav(targetLabel);
+                  if (targetLabel === 'Events') {
+                    scrollToEventsSection(event, navigate, location.pathname);
+                  } else if (targetLabel === 'My BNI Stories') {
+                    scrollToStoriesSection(event, navigate, location.pathname);
+                  } else {
+                    scrollToWhySection(event, navigate, location.pathname);
+                  }
                 }}
               >
                 {n}
@@ -969,14 +1074,16 @@ function Header() {
         })}
       </nav>
 
-      <a
-        className="join-btn desktop"
-        href="https://bni-bhopal.in/en-IN/howtojoin"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Join BNI <ArrowRight size={17} />
-      </a>
+      {showHeaderJoinButton && (
+        <button
+          type="button"
+          className="join-btn desktop"
+          onClick={onJoinNow}
+          aria-label="Ask to join BNI"
+        >
+          Ask to join BNI <ArrowRight size={17} />
+        </button>
+      )}
 
       <button className="menu" onClick={() => setOpen(!open)}>
         {open ? <X /> : <Menu />}
@@ -1197,7 +1304,151 @@ function Why() {
   );
 }
 
-function Home() {
+function MemberStoriesSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const visibleStories = Array.from({ length: 3 }, (_, offset) => {
+    const idx = (activeIndex + offset) % memberStories.length;
+    return memberStories[idx];
+  });
+
+  const showPrev = () => {
+    setActiveIndex((current) => (current - 1 + memberStories.length) % memberStories.length);
+  };
+
+  const showNext = () => {
+    setActiveIndex((current) => (current + 1) % memberStories.length);
+  };
+
+  return (
+    <section className="stories-section" id="stories">
+      <div className="section-head stories-header">
+        <div>
+          <div className="eyebrow">MEMBER STORIES</div>
+          <h2>What our members say</h2>
+        </div>
+
+        <div className="story-controls" aria-label="Member stories controls">
+          <button type="button" className="story-button" onClick={showPrev} aria-label="Previous member story">
+            <ChevronLeft size={18} />
+          </button>
+          <button type="button" className="story-button" onClick={showNext} aria-label="Next member story">
+            <ChevronRight size={18} />
+          </button>
+        </div>
+      </div>
+
+      <div className="stories-grid">
+        {visibleStories.map((story, index) => (
+          <article className={`story-card ${index === 0 ? 'featured' : ''}`} key={`${story.id}-${index}`}>
+            <div className="story-rating" aria-label={`${story.rating} out of 5 stars`}>
+              {Array.from({ length: story.rating }, (_, starIndex) => (
+                <span key={`${story.id}-star-${starIndex}`}>★</span>
+              ))}
+            </div>
+
+            <p className="story-quote">“{story.quote}”</p>
+
+            <div className="story-author">
+              <div className="story-avatar">
+                {story.photo ? <img src={story.photo} alt={story.name} /> : story.initials}
+              </div>
+              <div>
+                <strong>{story.name}</strong>
+                <small>{story.role}</small>
+                <span>{story.company}</span>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ScrollToTopButton({ visible }) {
+  if (!visible) return null;
+
+  return (
+    <button
+      type="button"
+      className="scroll-top-button"
+      aria-label="Scroll to top"
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+    >
+      <ArrowUp size={20} />
+    </button>
+  );
+}
+
+function AiChatPanel({ open, onClose }) {
+  const [messages, setMessages] = useState([
+    {
+      id: 1,
+      sender: 'bot',
+      text: 'Hi! I can help you with BNI membership, chapter details, and business growth opportunities.',
+    },
+  ]);
+  const [draft, setDraft] = useState('');
+
+  const panelClass = open ? 'agent-chat-panel open' : 'agent-chat-panel';
+
+  if (!open) return null;
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const trimmed = draft.trim();
+    if (!trimmed) return;
+
+    const userMessage = {
+      id: Date.now(),
+      sender: 'user',
+      text: trimmed,
+    };
+
+    const botReply = {
+      id: Date.now() + 1,
+      sender: 'bot',
+      text: 'Thanks for your message. I can help you explore the right BNI chapter, membership steps, and upcoming events for your business goals.',
+    };
+
+    setMessages((current) => [...current, userMessage, botReply]);
+    setDraft('');
+  };
+
+  return (
+    <div className={panelClass} role="dialog" aria-label="AI assistant chat">
+      <div className="agent-chat-header">
+        <div>
+          <span className="agent-chat-status" />
+          <strong>BNI AI Assistant</strong>
+        </div>
+        <button type="button" onClick={onClose} aria-label="Close chat">×</button>
+      </div>
+
+      <div className="agent-chat-body">
+        {messages.map((message) => (
+          <div key={message.id} className={`agent-message ${message.sender}`}>
+            {message.text}
+          </div>
+        ))}
+      </div>
+
+      <form className="agent-chat-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={draft}
+          onChange={(event) => setDraft(event.target.value)}
+          placeholder="Ask about membership..."
+          aria-label="Type your message"
+        />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  );
+}
+
+function Home({ onJoinNow }) {
   return (
     <>
       <section className="hero">
@@ -1251,6 +1502,18 @@ function Home() {
       {/* <ChaptersPreview /> */}
       <EventsPreview />
       <Why />
+      <MemberStoriesSection />
+      <section className="join-now-band" id="join-now">
+        <div className="join-now-inner">
+          <div>
+            <div className="eyebrow">READY TO GROW?</div>
+            <h2>Join BNI and start building real business relationships.</h2>
+          </div>
+          <button type="button" className="primary" onClick={onJoinNow}>
+            Ask to join BNI <ArrowRight />
+          </button>
+        </div>
+      </section>
       {/* <CTA /> */}
     </>
   );
@@ -1304,8 +1567,24 @@ function MembersPreview() {
 }
 
 function MemberCard({ member }) {
+  const badge = designatedMemberBadges[member.name];
+  const roleLabel = badge ? badge.label : member.role;
+
   return (
-    <Link to={'/members/' + member.id} className="member-card">
+    <Link
+      to={'/members/' + member.id}
+      className="member-card"
+      data-role-tooltip={roleLabel}
+      aria-label={roleLabel}
+      title={roleLabel}
+    >
+      {badge && (
+        <div className={`member-role-ribbon ${badge.type}`} aria-label={`${badge.label} member`} title={badge.label}>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 17.75l-6.172 3.245 1.179-6.873L2 9.255l6.9-1L12 2l3.1 6.255 6.9 1-5.007 4.867 1.179 6.873L12 17.75z" />
+          </svg>
+        </div>
+      )}
       <Avatar member={member} />
       <h3>{member.name}</h3>
       <p>{member.role}</p>
@@ -1403,16 +1682,13 @@ function IndiaMap({ active, onSelect }) {
 
 function EventsPreview() {
   return (
-    <section className="section events">
+    <section className="section events" id="events">
       <div className="section-head">
         <div>
           <div className="eyebrow">UPCOMING EVENTS</div>
           <h2>Connect, Learn & Grow</h2>
           <p>Join our upcoming events and expand your network.</p>
         </div>
-        <Link className="outline" to="/events">
-          View All Events <ArrowRight />
-        </Link>
       </div>
 
       <div className="event-grid">
@@ -1443,9 +1719,6 @@ function EventCard({ event }) {
           <br />
           {event.city}
         </p>
-        <b>
-          View Details <ArrowRight />
-        </b>
       </div>
     </Link>
   );
@@ -1490,9 +1763,29 @@ function DirectoryHeader({ title, desc, crumb }) {
 function Members() {
   const [q, setQ] = useState('');
   const [cat, setCat] = useState('All Categories');
+  const [role, setRole] = useState('All Roles');
   const [city, setCity] = useState('All Cities');
   const [page, setPage] = useState(1);
   const per = 8;
+
+  const roleOptions = useMemo(
+    () => ['All Roles', ...new Set(Object.values(designatedMemberBadges).map((badge) => badge.label))],
+    [],
+  );
+
+  const roleClassMap = useMemo(
+    () => ({
+      President: 'president',
+      'Vice President': 'vice-president',
+      'Secretary / Treasurer': 'secretary-treasurer',
+      'Visitor Host': 'visitor-host',
+      'Education Coordinator': 'education-coordinator',
+      'Events Coordinator': 'events-coordinator',
+      'Mentor Coordinator': 'mentor-coordinator',
+      'Membership Committee': 'membership-committee',
+    }),
+    [],
+  );
 
   const filtered = useMemo(
     () =>
@@ -1501,9 +1794,10 @@ function Members() {
           (!q ||
             [m.name, m.role, m.company, m.city].join(' ').toLowerCase().includes(q.toLowerCase())) &&
           (cat === 'All Categories' || m.category === cat) &&
+          (role === 'All Roles' || designatedMemberBadges[m.name]?.label === role) &&
           (city === 'All Cities' || m.city === city),
       ),
-    [q, cat, city],
+    [q, cat, role, city],
   );
 
   const shown = filtered.slice((page - 1) * per, page * per);
@@ -1543,15 +1837,15 @@ function Members() {
             ))}
           </select>
 
-          <select
+          {/* <select
             value="All Chapters"
             disabled
             aria-label="Chapter filter"
           >
             <option>All Chapters</option>
-          </select>
+          </select> */}
 
-          <select
+          {/* <select
             value={city}
             onChange={(e) => {
               setCity(e.target.value);
@@ -1562,18 +1856,42 @@ function Members() {
             {[...new Set(members.map((m) => m.city))].map((c) => (
               <option key={c}>{c}</option>
             ))}
-          </select>
+          </select> */}
 
-          <button className="filter-button">
+          {/* <button className="filter-button">
             <SlidersHorizontal /> Filters
-          </button>
+          </button> */}
+        </div>
+
+        <div className="role-filter-pills" aria-label="Role filters">
+          {roleOptions.map((option) => (
+            <button
+              key={option}
+              type="button"
+              className={`role-filter-pill ${role === option ? 'selected' : ''}`}
+              onClick={() => {
+                setRole(option);
+                setPage(1);
+              }}
+              aria-pressed={role === option}
+            >
+              {option === 'All Roles' ? (
+                <span className="role-filter-dot default" />
+              ) : (
+                <span className={`role-filter-dot ${roleClassMap[option] || 'default'}`} />
+              )}
+              {option}
+            </button>
+          ))}
         </div>
 
         <div className="results-head">
-          <span>{filtered.length} members found</span>
+          <span>
+            {filtered.length ? `Page ${page} of ${pages}` : 'No members found'}
+          </span>
           <small>
             Showing {filtered.length ? (page - 1) * per + 1 : 0}–
-            {Math.min(page * per, filtered.length)} of {filtered.length}
+            {Math.min(page * per, filtered.length)} of {filtered.length} members
           </small>
         </div>
 
@@ -1971,11 +2289,23 @@ function Footer() {
 }
 
 function App() {
+  const [chatOpen, setChatOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  React.useEffect(() => {
+    const onScroll = () => setShowScrollTop(window.scrollY > 400);
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <>
-      <Header />
+      <Header onJoinNow={() => setChatOpen(true)} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home onJoinNow={() => setChatOpen(true)} />} />
         <Route path="/members" element={<Members />} />
         <Route path="/members/:id" element={<Detail kind="member" />} />
         {/* <Route path="/chapters" element={<Chapters />} /> */}
@@ -1983,10 +2313,11 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/events/:id" element={<Detail kind="event" />} />
         <Route path="/membership" element={<SimplePage type="membership" />} />
-        <Route path="/about" element={<SimplePage type="about" />} />
         <Route path="/contact" element={<SimplePage type="contact" />} />
       </Routes>
       <Footer />
+      <AiChatPanel open={chatOpen} onClose={() => setChatOpen(false)} />
+      <ScrollToTopButton visible={showScrollTop} />
     </>
   );
 }
